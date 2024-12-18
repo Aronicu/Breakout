@@ -40,7 +40,16 @@
           overflow: hidden; 
           background-color: black;
         }
-        canvas.emscripten { 
+
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background-color: black; /* Optional background for visualization */
+        }
+
+        /* canvas.emscripten { 
           border: 0px none; 
           background-color: black;}
           padding-left: 0;
@@ -48,7 +57,7 @@
           margin-left: auto;
           margin-right: auto;
           display: block;
-        }
+        } */
     </style>
     <script type='text/javascript' src="https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js"> </script>
     <script type='text/javascript'>
@@ -71,8 +80,11 @@
     </script>
     </head>
     <body>
-        <canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
-        <p id="output" />
+        <div class="canvas-container">
+            <canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
+            <p id="output" />
+        </div>
+        
         <script>
             var Module = {
                 print: (function() {
