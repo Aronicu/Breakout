@@ -1,5 +1,6 @@
 # Breakout-Clone
-An example of how you use the [Raylib WASM Template](https://github.com/Aronicu/Raylib-WASM)
+An example of how you use the [Raylib WASM Template](https://github.com/Aronicu/Raylib-WASM) <br><br>
+[Play it Here](https://aronicu.github.io/breakout/)
 
 ## Building
 
