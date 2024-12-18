@@ -7,6 +7,8 @@ call C:\SDKs\emsdk\emsdk_env.bat
 
 pushd build_web
 odin build ..\src\game -target:freestanding_wasm32 -build-mode:obj -show-system-calls
+IF %ERRORLEVEL% NEQ 0 exit /b 1
+
 set files=..\src\wasm\main_wasm.c ..\raylib\wasm\libraylib.a game.wasm.o
 set flags=-sUSE_GLFW=3 -sASYNCIFY -sASSERTIONS -DPLATFORM_WEB
 set mem=-sTOTAL_STACK=64MB -sINITIAL_MEMORY=128MB

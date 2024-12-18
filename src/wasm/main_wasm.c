@@ -7,13 +7,14 @@
 #include <emscripten/emscripten.h>
 
 extern void InitWindow(int width, int height, const char *title);
+extern void InitAudioDevice();
 
 extern void game_init();
 extern void game_frame();
 
-#define WIDTH 1280
-#define HEIGHT 720
-#define TITLE "Jam"
+#define WIDTH 640
+#define HEIGHT 640
+#define TITLE "Breakout"
 
 #define Byte 1
 #define Kilobyte 1024 * Byte
@@ -27,6 +28,7 @@ extern void game_frame();
 
 int main(void) {
   InitWindow(WIDTH, HEIGHT, TITLE);
+  InitAudioDevice();
   game_init();
 
   emscripten_set_main_loop(game_frame, 0, 1);
